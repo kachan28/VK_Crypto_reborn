@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Blend for Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKCrypto_reborn(win)", "VKCrypto_reborn(win)\VKCrypto_reborn(win).csproj", "{67224942-93D5-42FD-BBE7-B623AD343EDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67224942-93D5-42FD-BBE7-B623AD343EDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67224942-93D5-42FD-BBE7-B623AD343EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67224942-93D5-42FD-BBE7-B623AD343EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67224942-93D5-42FD-BBE7-B623AD343EDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1BDD6E53-273B-4245-B316-796B9BD64C5C}
+	EndGlobalSection
+EndGlobal

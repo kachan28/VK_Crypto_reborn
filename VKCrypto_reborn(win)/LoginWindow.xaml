@@ -1,0 +1,82 @@
+﻿<Window x:Class="VKCrypto_reborn_win_.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VKCrypto_reborn_win_"
+        mc:Ignorable="d"
+        Title="LoginToVK" Height="300" Width="500" Background="#7BABBF" ResizeMode="CanMinimize">
+    <Window.Resources>
+        <Style x:Key="Rounded_corners">
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5" />
+                    <Setter Property="BorderThickness" Value="1"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style TargetType="PasswordBox" x:Key="roundcornerpassword">
+            <Setter Property="PasswordChar" Value="●"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border CornerRadius="3" x:Name="Bd" Background="White" BorderBrush="Gray" BorderThickness="1" OpacityMask="{x:Null}">
+                            <ScrollViewer SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" x:Name="PART_ContentHost" Template="{DynamicResource ScrollViewerControlTemplate1}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="vkcrypto" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+               Foreground="#F6F6F6" Margin="20,5,0,0" FontSize="55" FontFamily="/VKCrypto_reborn(win);component/Fonts/#Oxin War"/>
+        <Label Content="Логин:" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="1"
+               Foreground="#F6F6F6" Margin="20,5,0,0" FontSize="14"/>
+        <TextBox Name="Login_holder" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" Margin="20,5"
+                 Style="{StaticResource Rounded_corners}" FontSize="18" KeyDown="Password_holder_KeyDown"/>
+        <Label Content="Пароль:" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="1"
+               Foreground="#F6F6F6" Margin="20,5,0,0" FontSize="14"/>
+        <PasswordBox Name="Password_holder" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" KeyDown="Password_holder_KeyDown"
+                     Margin="20,5" Style="{StaticResource roundcornerpassword}" FontSize="18"/>
+        <Button Name="LoginButton" Grid.Row="5" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2"
+                HorizontalAlignment="Center" VerticalAlignment="Center" Content="Войти" FontSize="15"
+                Height="25" Width="70" Background="#F6F6F6" Style="{StaticResource Rounded_corners}" Click="LoginButton_Click"/>
+        <CheckBox Name="Remember_me" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="2"
+                  HorizontalAlignment="Center" VerticalAlignment="Center" Content="Запомнить меня"
+                  Foreground="#F6F6F6F6">
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="1.3" ScaleY="1.3" />
+            </CheckBox.LayoutTransform>
+        </CheckBox>
+    </Grid>
+</Window>
